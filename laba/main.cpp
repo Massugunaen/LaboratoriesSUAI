@@ -20,16 +20,16 @@ struct Date
     int year;
 };
 
-struct Stud
+struct Student
 {
-    char FIO[nfio];
-    char pol, obr, adress, stip;
-    Date datar;
-    int ocenka[5];
-    int kb;
+    char name[nfio];
+    char gender, education, address, grant;
+    Date birthday;
+    int mark[5];
+    int exam;
 };
 
-int otbor(Stud Z[NS], Stud Z1[NS])
+int filter(Student Z[NS], Student Z1[NS])
 {
     int i, j, flag, n, N = 0;
     flag;
@@ -39,12 +39,12 @@ int otbor(Stud Z[NS], Stud Z1[NS])
     {
         flag = 1;
         for (j = 0; j < 5; j++)
-            if (Z[i].ocenka[j] == 3)
+            if (Z[i].mark[j] == 3)
             {
                 flag = 0;
                 break;
             }
-        if ((flag == 1) && (Z[i].datar.month == 12 || Z[i].datar.month == 1 || Z[i].datar.month == 2))
+        if ((flag == 1) && (Z[i].birthday.month == 12 || Z[i].birthday.month == 1 || Z[i].birthday.month == 2))
         {
             Z1[n] = Z[i];
             n++;
@@ -57,34 +57,48 @@ int otbor(Stud Z[NS], Stud Z1[NS])
 int main()
 {
     int j, i, s;
-    Stud group[NS], group1[NS];
+    Student group[NS], filteredGroup[NS];
 
     cout << "Vvedite spisok v vide:\n";
-    cout << "Ivanov I.I. m s p y 19 01 2000 55555 250\n";
-
+    cout << "IvanovII m s p y 19 10 2000 5 5 5 5 5 250\n";
+    
     for (i = 0; i < NS; i++)
     {
-        cin >> group[i].FIO >> group[i].pol >> group[i].obr >> group[i].adress >> group[i].stip >> group[i].datar.day >> group[i].datar.month >> group[i].datar.year;
-
-        for (j = 0; j < 5; j++)
-            cin >> group[i].ocenka[j];
-
-        cin >> group[i].kb;
-    }
-
-    int counter = otbor(group, group1);
-
-    cout << endl;
-
-    for (i = 0; i < counter; i++)
-    {
-        cout << group1[i].FIO << " " << group1[i].pol << " " << group1[i].obr << " " << group1[i].adress << " " << group1[i].stip << " " << group1[i].datar.day << " " << group1[i].datar.month << " " << group1[i].datar.year << " ";
+        cin >> group[i].name;
+        cin >> group[i].gender;
+        cin >> group[i].education;
+        cin >> group[i].address;
+        cin >> group[i].grant;
+        cin >> group[i].birthday.day;
+        cin >> group[i].birthday.month;
+        cin >> group[i].birthday.year;
 
         for (j = 0; j < 5; j++)
         {
-            cout << group1[i].ocenka[j] << " ";
+            cin >> group[i].mark[j];
         }
 
-        cout << group1[i].kb << "\n";
+        cin >> group[i].exam;
+    }
+
+    int counter = filter(group, filteredGroup);
+
+    for (i = 0; i < counter; i++)
+    {
+        cout << filteredGroup[i].name << " ";
+        cout << filteredGroup[i].gender << " ";
+        cout << filteredGroup[i].education << " ";
+        cout << filteredGroup[i].address << " ";
+        cout << filteredGroup[i].grant << " ";
+        cout << filteredGroup[i].birthday.day << " ";
+        cout << filteredGroup[i].birthday.month << " ";
+        cout << filteredGroup[i].birthday.year << " ";
+
+        for (j = 0; j < 5; j++)
+        {
+            cout << filteredGroup[i].mark[j] << " ";
+        }
+
+        cout << filteredGroup[i].exam << "\n";
     }
 }
