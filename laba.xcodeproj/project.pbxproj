@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		08215DB922417D7000408DEA /* laba */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = laba; sourceTree = BUILT_PRODUCTS_DIR; };
-		08215DBC22417D7000408DEA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		08215DBC22417D7000408DEA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
