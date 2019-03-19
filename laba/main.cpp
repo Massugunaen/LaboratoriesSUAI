@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <string.h>
-//#include<conio.h>
 #define nfio 15
 #define NS 7
 using namespace std;
@@ -26,10 +25,10 @@ struct Student
     char gender, education, address, grant;
     Date birthday;
     int mark[5];
-    int exam;
+    int examScore;
 };
 
-int filter(Student Z[NS], Student Z1[NS])
+int filter(Student input[NS], Student output[NS])
 {
     int i, j, flag, n, N = 0;
     flag;
@@ -38,15 +37,17 @@ int filter(Student Z[NS], Student Z1[NS])
     for (i = 0; i < NS; i++)
     {
         flag = 1;
-        for (j = 0; j < 5; j++)
-            if (Z[i].mark[j] == 3)
+        for (j = 0; j < 5; j++) {
+            if (input[i].mark[j] == 3)
             {
                 flag = 0;
                 break;
             }
-        if ((flag == 1) && (Z[i].birthday.month == 12 || Z[i].birthday.month == 1 || Z[i].birthday.month == 2))
+        }
+            
+        if ((flag == 1) && (input[i].birthday.month == 12 || input[i].birthday.month == 1 || input[i].birthday.month == 2))
         {
-            Z1[n] = Z[i];
+            output[n] = input[i];
             n++;
         }
         N = n;
@@ -78,7 +79,7 @@ int main()
             cin >> group[i].mark[j];
         }
 
-        cin >> group[i].exam;
+        cin >> group[i].examScore;
     }
 
     int counter = filter(group, filteredGroup);
@@ -99,6 +100,6 @@ int main()
             cout << filteredGroup[i].mark[j] << " ";
         }
 
-        cout << filteredGroup[i].exam << "\n";
+        cout << filteredGroup[i].examScore << "\n";
     }
 }
