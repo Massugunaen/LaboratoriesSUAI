@@ -57,11 +57,11 @@ int filter(Student input[NS], Student output[NS])
 
 int main()
 {
-    int j, i, s;
+    int j, i;
     Student group[NS], filteredGroup[NS];
 
-    cout << "Vvedite spisok v vide:\n";
-    cout << "IvanovII m s p y 19 10 2000 5 5 5 5 5 250\n";
+    cout << "Please input list of students...\n";
+    cout << "Example: IvanovII m s p y 19 10 2000 5 5 5 5 5 250\n";
     
     for (i = 0; i < NS; i++)
     {
@@ -82,9 +82,9 @@ int main()
         cin >> group[i].examScore;
     }
 
-    int counter = filter(group, filteredGroup);
+    int count = filter(group, filteredGroup);
 
-    for (i = 0; i < counter; i++)
+    for (i = 0; i < count; i++)
     {
         cout << filteredGroup[i].name << " ";
         cout << filteredGroup[i].gender << " ";
