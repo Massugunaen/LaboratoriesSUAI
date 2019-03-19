@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string.h>
 #define nfio 15
-#define NS 7
+#define NS 6
 using namespace std;
 
 struct Date
@@ -30,29 +30,21 @@ struct Student
 
 int filter(Student input[NS], Student output[NS])
 {
-    int i, j, flag, n, N = 0;
-    flag;
-    n = 0;
+    int n = 0;
 
-    for (i = 0; i < NS; i++)
+    for (int i = 0; i < NS; i++)
     {
-        flag = 1;
-        for (j = 0; j < 5; j++) {
-            if (input[i].mark[j] == 3)
-            {
-                flag = 0;
-                break;
-            }
-        }
-            
-        if ((flag == 1) && (input[i].birthday.month == 12 || input[i].birthday.month == 1 || input[i].birthday.month == 2))
+        bool getGrant = input[i].grant == 'n';
+        bool matchExamScore = input[i].examScore > 20;
+
+        if (getGrant && matchExamScore)
         {
             output[n] = input[i];
             n++;
         }
-        N = n;
     }
-    return N;
+    
+    return n;
 };
 
 int main()
