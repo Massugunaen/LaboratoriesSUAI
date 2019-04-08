@@ -1,7 +1,3 @@
-Succ
+# All Laboratories
 
-## Run
-
-```bash
-cat sample | laba
-```
+All my laboratories of first course in SUAI
