@@ -1,4 +1,4 @@
-#Laba
+Succ
 
 ## Run
 
