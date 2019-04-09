@@ -2,7 +2,12 @@
 #include <string.h>
 #define nfio 15
 #define NS 6
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::ofstream;
+using std::string;
+
 
 struct Date
 {
@@ -28,9 +33,8 @@ int filter(Student input[NS], Student output[NS])
     {
         bool getGrant = input[i].grant == 'n';
         bool matchExamScore = input[i].examScore > 20;
-        bool getMonth = (input[i].birthday.month == 3 || input[i].birthday.month == 4 || input[i].birthday.month == 1);
 
-        if (getGrant && matchExamScore && getMonth)
+        if (getGrant && matchExamScore)
         {
             output[n] = input[i];
             n++;

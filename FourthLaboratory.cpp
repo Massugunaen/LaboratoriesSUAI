@@ -2,6 +2,7 @@
 #include <string.h>
 #include <fstream>
 #include <conio.h>
+#include <stdlib.h>
 #define nfio 15
 #define NS 6
 using std::cin;
@@ -65,7 +66,7 @@ struct Student
 };
 
 
-int main()
+int main (void)
 {
 
     cout << "Please input list of students..." << endl;
@@ -101,5 +102,22 @@ int main()
         }
         file.close();
     }
+    char string[50];
+	ifstream file (directory);
+	if(!file)
+	{
+		cout << "No file in such directory" << endl;
+		abort();
+	}
+	else
+	{
+		for (int i=0;i<6;i++)
+		{
+			file.getline(string,50);
+			cout << string << endl;
+		}
+		file.close();
+	}
     return 0;
+    
 }
