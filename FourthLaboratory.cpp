@@ -9,6 +9,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::ofstream;
+using std::ifstream;
 using std::string;
 
 struct Date
@@ -77,7 +78,7 @@ int main (void)
     {
         Students[i].InputData();
     }
-    ofstream file;
+    ofstream file; //named the File "file"
     char directory [60];
     char filename [20];
     cout << "Enter files' directory" << endl;
@@ -101,9 +102,14 @@ int main (void)
             Students[i].WriteDataToFile(file);
         }
         file.close();
-    }
-    char string[50];
-	ifstream file (directory);
+	}
+	
+	
+	
+	cout << "Reading from file...." << endl;
+	{
+	char string[50];
+	ifstream file;
 	if(!file)
 	{
 		cout << "No file in such directory" << endl;
@@ -118,6 +124,6 @@ int main (void)
 		}
 		file.close();
 	}
-    return 0;
-    
+	}
+return 0;
 }
