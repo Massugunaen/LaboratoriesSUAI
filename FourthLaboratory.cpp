@@ -11,6 +11,7 @@ using std::endl;
 using std::ofstream;
 using std::ifstream;
 using std::string;
+using std::getline;
 
 struct Date
 {
@@ -78,19 +79,19 @@ int main (void)
     {
         Students[i].InputData();
     }
-    ofstream file; //named the File "file"
+    ofstream file;
     char directory [60];
     char filename [20];
     cout << "Enter files' directory" << endl;
     cin >> directory;
     cout << "Enter files' name" << endl;
     cin >> filename;
-    strcat(directory,filename);
-    file.open(directory);
+    strcat ( directory, filename );
+    file.open( directory );
 
-    if(!file)
+    if( !file )
     {
-        cout << "Wrong FileName or Direction" << endl;
+        cout << "Wrong files' name or Direction" << endl;
         return 1;
     }
     
@@ -101,29 +102,31 @@ int main (void)
         {
             Students[i].WriteDataToFile(file);
         }
-        file.close();
+    	file.close();
 	}
 	
 	
-	
-	cout << "Reading from file...." << endl;
 	{
-	char string[50];
-	ifstream file;
-	if(!file)
-	{
-		cout << "No file in such directory" << endl;
-		abort();
-	}
-	else
-	{
-		for (int i=0;i<6;i++)
+		char string[50];
+		ifstream file(filename);
+		
+		if(file.is_open())
 		{
-			file.getline(string,50);
+			for (int i=0;i<NS;i++)
+			{
+			file >> string;
 			cout << string << endl;
+			file.getline(string, 50);	
+			}
+			file.close();
+		cout << string << endl;
 		}
-		file.close();
-	}
+	
+		else if (!file.is_open())
+		{	
+			cout << "File wasn't opened" << endl;
+		
+		}
 	}
 return 0;
 }
