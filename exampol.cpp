@@ -23,3 +23,4 @@ else
 	cout << "This guy is retarded" << endl;
 }
 }
+//fuc off nibba
