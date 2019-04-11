@@ -1,17 +1,20 @@
-#include <iostream> //tryhard
+#include <iostream>
 #include <string.h>
 #include <fstream>
 #include <conio.h>
 #include <stdlib.h>
 #define nfio 15
 #define NS 6
-using std::cin;
-using std::cout;
-using std::endl;
-using std::ofstream;
-using std::ifstream;
-using std::string;
-using std::getline;
+
+using namespace std;
+
+//using std::cin;
+//using std::cout;
+//using std::endl;
+//using std::ofstream;
+//using std::ifstream;
+//using std::string;
+//using std::getline;
 
 struct Date
 {
@@ -102,31 +105,21 @@ int main (void)
         {
             Students[i].WriteDataToFile(file);
         }
-    	file.close();
-	}
-	
-	
-	{
-		char string[50];
-		ifstream file(filename);
+	    file.close();
 		
-		if(file.is_open())
+		char string[500];
+		ifstream file (directory);
 		{
 			for (int i=0;i<NS;i++)
 			{
-			file >> string;
-			cout << string << endl;
-			file.getline(string, 50);	
+				file.getline(string,500);
+				cout << string << endl;
 			}
 			file.close();
-		cout << string << endl;
-		}
-	
-		else if (!file.is_open())
-		{	
-			cout << "File wasn't opened" << endl;
-		
 		}
 	}
-return 0;
+	
+	
+	
+	return 0;
 }
