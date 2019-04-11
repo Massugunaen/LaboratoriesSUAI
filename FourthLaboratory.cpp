@@ -119,7 +119,24 @@ int main (void)
 		}
 	}
 	
-	
+//	int filter(Student input[NS], Student output[NS])
+//	{
+//    int n = 0;
+//
+//    for (int i = 0; i < NS; i++)
+//    {
+//        bool getGrant = input[i].grant == 'n';
+//        bool matchExamScore = input[i].examScore > 20;
+//
+//        if (getGrant && matchExamScore)
+//        {
+//            output[n] = input[i];
+//            n++;
+//        }
+//    }
+//    
+//    return n;
+//	};
 	
 	return 0;
 }
