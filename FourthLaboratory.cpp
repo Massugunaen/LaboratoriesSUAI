@@ -1,11 +1,8 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
-#include <conio.h>
-#include <stdlib.h>
 #define nfio 15
 #define NS 6
-
 
 struct Date
 {
@@ -20,8 +17,7 @@ struct Student
     char gender, education, address, grant;
     Date birthday;
     int mark[5];
-    int examScore;
-    
+    int examScore;    
     
     void InputData()
     {
@@ -33,16 +29,15 @@ struct Student
         std::cin >> birthday.day;
         std::cin >> birthday.month;
         std::cin >> birthday.year;
-
+        
         for (int j = 0; j < 5; j++)
         {
             std::cin >> mark[j];
         }
-
         std::cin >> examScore;
 	};
 
-	void WriteDataToFile ( std::ofstream & file )
+	void WriteDataToFile (std::ofstream & file )
 	{
 		file << name << " ";
 		file << gender << " ";
@@ -51,18 +46,18 @@ struct Student
 		file << grant << " ";
 		file << birthday.day << " ";
 		file << birthday.month << " ";
-        file << birthday.year << " ";
-
-        for (int j = 0; j < 5; j++)
-        {
-            file << mark[j] << " ";
-        }
-        
+	    file << birthday.year << " ";
+	
+	    for (int j = 0; j < 5; j++)
+	    {
+	        file << mark[j] << " ";
+	    }
+    
         file << examScore << " " << std::endl;
 	};
 };
 
-int filter(Student input[NS], Student output[NS])
+int filter (Student input[NS], Student output[NS])
 {
     int n = 0;
 
@@ -80,10 +75,8 @@ int filter(Student input[NS], Student output[NS])
     return n;
 };
 
-
 int main (void)
 {
-
     std::cout << "Please input list of students..." << std::endl;
     std::cout << "Example: IvanovII m s p y 19 10 2000 5 5 5 5 5 250" << std::endl;
     Student Students [NS];
@@ -128,8 +121,6 @@ int main (void)
 			file.close();
 		}
 	}
-	
-	
-	
-	return 0;
+		
+return 0;
 }
