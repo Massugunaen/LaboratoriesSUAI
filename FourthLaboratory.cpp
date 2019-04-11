@@ -6,15 +6,6 @@
 #define nfio 15
 #define NS 6
 
-using namespace std;
-
-//using std::cin;
-//using std::cout;
-//using std::endl;
-//using std::ofstream;
-//using std::ifstream;
-//using std::string;
-//using std::getline;
 
 struct Date
 {
@@ -31,26 +22,27 @@ struct Student
     int mark[5];
     int examScore;
     
+    
     void InputData()
     {
-    	cin >> name;
-        cin >> gender;
-        cin >> education;
-        cin >> address;
-        cin >> grant;
-        cin >> birthday.day;
-        cin >> birthday.month;
-        cin >> birthday.year;
+    	std::cin >> name;
+        std::cin >> gender;
+        std::cin >> education;
+        std::cin >> address;
+        std::cin >> grant;
+        std::cin >> birthday.day;
+        std::cin >> birthday.month;
+        std::cin >> birthday.year;
 
         for (int j = 0; j < 5; j++)
         {
-            cin >> mark[j];
+            std::cin >> mark[j];
         }
 
-        cin >> examScore;
+        std::cin >> examScore;
 	};
 
-	void WriteDataToFile ( ofstream & file )
+	void WriteDataToFile ( std::ofstream & file )
 	{
 		file << name << " ";
 		file << gender << " ";
@@ -66,41 +58,59 @@ struct Student
             file << mark[j] << " ";
         }
         
-        file << examScore << " " << endl;
+        file << examScore << " " << std::endl;
 	};
+};
+
+int filter(Student input[NS], Student output[NS])
+{
+    int n = 0;
+
+    for (int i = 0; i < NS; i++)
+    {
+        bool getGrant = input[i].grant == 'n';
+        bool matchExamScore = input[i].examScore > 20;
+
+        if (getGrant && matchExamScore)
+        {
+            output[n] = input[i];
+            n++;
+        }
+    }    
+    return n;
 };
 
 
 int main (void)
 {
 
-    cout << "Please input list of students..." << endl;
-    cout << "Example: IvanovII m s p y 19 10 2000 5 5 5 5 5 250" << endl;
+    std::cout << "Please input list of students..." << std::endl;
+    std::cout << "Example: IvanovII m s p y 19 10 2000 5 5 5 5 5 250" << std::endl;
     Student Students [NS];
 
     for (int i = 0; i < NS; i++)
     {
         Students[i].InputData();
     }
-    ofstream file;
+    std::ofstream file;
     char directory [60];
     char filename [20];
-    cout << "Enter files' directory" << endl;
-    cin >> directory;
-    cout << "Enter files' name" << endl;
-    cin >> filename;
+    std::cout << "Enter files' directory" << std::endl;
+    std::cin >> directory;
+    std::cout << "Enter files' name" << std::endl;
+    std::cin >> filename;
     strcat ( directory, filename );
     file.open( directory );
 
     if( !file )
     {
-        cout << "Wrong files' name or Direction" << endl;
+        std::cout << "Wrong files' name or Direction" << std::endl;
         return 1;
     }
     
     else
     {
-        cout << "Writing data to File..." << endl;
+        std::cout << "Writing data to File..." << std::endl;
         for (int i=0; i<NS; i++)
         {
             Students[i].WriteDataToFile(file);
@@ -108,35 +118,18 @@ int main (void)
 	    file.close();
 		
 		char string[500];
-		ifstream file (directory);
+		std::ifstream file (directory);
 		{
 			for (int i=0;i<NS;i++)
 			{
 				file.getline(string,500);
-				cout << string << endl;
+				std::cout << string << std::endl;
 			}
 			file.close();
 		}
 	}
 	
-//	int filter(Student input[NS], Student output[NS])
-//	{
-//    int n = 0;
-//
-//    for (int i = 0; i < NS; i++)
-//    {
-//        bool getGrant = input[i].grant == 'n';
-//        bool matchExamScore = input[i].examScore > 20;
-//
-//        if (getGrant && matchExamScore)
-//        {
-//            output[n] = input[i];
-//            n++;
-//        }
-//    }
-//    
-//    return n;
-//	};
+	
 	
 	return 0;
 }
