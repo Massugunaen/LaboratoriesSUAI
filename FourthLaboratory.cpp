@@ -57,26 +57,25 @@ struct Student
     
         file << examScore << " " << std::endl;
     };
-    
-    int filter (Student input[NS], Student output[NS])
-    {
-    	int n = 0;
-
-	    for (int i = 0; i < NS; i++)
-	    {
-	        bool getGrant = input[i].grant == 'n';
-	        bool matchExamScore = input[i].examScore > 20;
-	
-	        if (getGrant && matchExamScore)
-	        {
-	            output[n] = input[i];
-	            n++;
-	        }
-	    }
-    return n;
-	}
 };
 
+int filter (Student input[NS], Student output[NS])
+{
+	int n = 0;
+
+    for (int i = 0; i < NS; i++)
+    {
+        bool getGrant = input[i].grant == 'n';
+        bool matchExamScore = input[i].examScore > 20;
+
+        if (getGrant && matchExamScore)
+        {
+            output[n] = input[i];
+            n++;
+        }
+    }
+	return n;
+};
 
 int main (void)
 {
@@ -124,7 +123,6 @@ int main (void)
         }
     }
     
-    //started making filtered_file
     std::cout << "\nCreating filtered file..." << std::endl;
     std::cout << "Input same as previous time" << std::endl;
     
@@ -141,8 +139,10 @@ int main (void)
     std::cin >> f_filename;
     strcat (f_directory, f_filename);
     file.open(f_directory);
-
-    if(!file)
+	Student Result[NS];
+	int NumberOfFilteredStudents=filter(Students, Result);
+	
+    if(!f_file)
     {
         std::cout << "Wrong files' name or directory" << std::endl;
         return 1;
@@ -150,9 +150,9 @@ int main (void)
     else
     {
         std::cout << "Writing data to file..." << std::endl;
-        for (int i=0; i<NS; i++)
+        for (int i=0; i<NumberOfFilteredStudents; i++)
         {
-            Students[i].WriteDataToFile(file);
+            Result[i].WriteDataToFile(file);
         }
         file.close();
     }
