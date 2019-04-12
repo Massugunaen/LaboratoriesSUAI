@@ -71,7 +71,7 @@ int filter (Student input[NS], Student output[NS])
             output[n] = input[i];
             n++;
         }
-    }    
+    }
     return n;
 };
 
@@ -110,17 +110,20 @@ int main (void)
         }
 	    file.close();
 		
-		char string[500];
+		char string[100];
 		std::ifstream file (directory);
 		{
 			for (int i=0;i<NS;i++)
 			{
-				file.getline(string,500);
+				file.getline(string,100);
 				std::cout << string << std::endl;
 			}
 			file.close();
 		}
 	}
-		
+	
+	
+	
+	
 return 0;
 }
