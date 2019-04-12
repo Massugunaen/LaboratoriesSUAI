@@ -57,6 +57,23 @@ struct Student
     
         file << examScore << " " << std::endl;
     };
+    
+    void Filter_for_file (Student input[NS], Student output[NS])
+    {
+    	int n = 0;
+    	
+    	for (int i = 0; i < NS; i++)
+	    {
+	        bool getGrant = input[i].grant == 'n';
+	        bool matchExamScore = input[i].examScore > 20;
+	
+	        if (getGrant && matchExamScore)
+	        {
+	            output[n] = input[i];
+	            n++;
+	        }
+	    }
+	};
 };
 
 int filter (Student input[NS], Student output[NS])
@@ -140,9 +157,9 @@ int main (void)
     strcat (f_directory, f_filename);
     file.open(f_directory);
 	Student Result[NS];
-	int NumberOfFilteredStudents=filter(Students, Result);
+	int NumberOfFilteredStudents = filter (Students, Result);
 	
-    if(!f_file)
+    if(!file)
     {
         std::cout << "Wrong files' name or directory" << std::endl;
         return 1;
@@ -150,7 +167,7 @@ int main (void)
     else
     {
         std::cout << "Writing data to file..." << std::endl;
-        for (int i=0; i<NumberOfFilteredStudents; i++)
+        for (int i=0; i < NumberOfFilteredStudents; i++)
         {
             Result[i].WriteDataToFile(file);
         }
