@@ -1,26 +1,19 @@
 #include <iostream>
-#include <stdlib.h>
-
 using namespace std;
 
-int main (void)
+int main()
 {
-int age;
-
-cin >> age;
-
-if ( 14 > age < 18)
-{
-	cout << "This guy is between 14 and 18" << endl;
+    int a, a1, b, b1;
+    cin >> a >> b >> a1 >> b1; // try to make through tg !
+    
+    if ((a != a1) && (b != b1)) // a/a1 // b/b1 and through coordinates
+    {
+        cout << "YES" << endl;
+    }
+    
+    else 
+    {
+        cout << "NO" << endl;
+    }
+    return 0;
 }
-else if (0 > age < 14)
-{
-	cout << "This guy is between 0 and 14" << endl;
-}
-else 
-{
-	if (age < 0)
-	cout << "This guy is retarded" << endl;
-}
-}
-//fuc off nibba
