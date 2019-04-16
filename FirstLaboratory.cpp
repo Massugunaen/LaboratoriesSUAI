@@ -1,4 +1,4 @@
-#include <iostream> //tryhard
+#include <iostream> 
 #include <string.h>
 #define nfio 15
 #define NS 6
@@ -28,7 +28,6 @@ struct Student
 int filter(Student input[NS], Student output[NS])
 {
     int n = 0;
-
     for (int i = 0; i < NS; i++)
     {
         bool getGrant = input[i].grant == 'n';
@@ -40,13 +39,12 @@ int filter(Student input[NS], Student output[NS])
             n++;
         }
     }
-    
     return n;
 };
 
 int main()
 {
-    int j, i;
+	int j, i;
     Student group[NS], filteredGroup[NS];
 
     cout << "Please input list of students...\n";
@@ -91,4 +89,5 @@ int main()
 
         cout << filteredGroup[i].examScore << "\n";
     }
+    
 }

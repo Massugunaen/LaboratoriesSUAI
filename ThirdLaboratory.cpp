@@ -7,7 +7,7 @@ using namespace std;
 int main(void)
 {
 	char string[50];
-	ifstream file ("D:\\Study\\Students\\ListOfStudents.txt");
+	ifstream file ("D:\\study\\students\\ListOfStudents.txt");
 	if(!file)
 	{
 		cout << "No file in such directory" << endl;
@@ -23,4 +23,3 @@ int main(void)
 		file.close();
 	}
 }
-//tryhard

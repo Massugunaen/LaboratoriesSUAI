@@ -1,9 +1,10 @@
 #include <iostream>
-#include <string.h>
+#include <string.h> 
 #include <fstream>
 #include <conio.h>
 #define nfio 15
 #define NS 6
+
 using namespace std;
 
 struct date
@@ -58,7 +59,7 @@ for (int i = 0; i < NS; i++)
 }
 ofstream file;
 char directiva [60];
-char nazvanie [20];
+char nazvanie [20]; 
 cout << "vvedite directivu" << endl;
 cin >> directiva;
 cout << "vvvedite nazvanie" << endl;
