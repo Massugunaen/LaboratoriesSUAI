@@ -1,19 +1,17 @@
 #include <iostream>
-using namespace std;
 
 int main()
 {
-    int a, a1, b, b1;
-    cin >> a >> b >> a1 >> b1; // try to make through tg !
+    int N;
+    std::cin >> N;
+    int x = 1;
+    int k;
     
-    if ((a != a1) && (b != b1)) // a/a1 // b/b1 and through coordinates
+    while ( k < N ) // k < 50
     {
-        cout << "YES" << endl;
-    }
-    
-    else 
-    {
-        cout << "NO" << endl;
+        k = (k*x);
+        std::cout << (k) << std::endl;
+        k+1;
     }
     return 0;
 }
