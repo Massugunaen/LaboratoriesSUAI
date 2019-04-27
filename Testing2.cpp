@@ -1,10 +1,8 @@
 #include <iostream>
+#include <cmath>
 
 int main (void){
-	int a = 2, b = 4 , c = 6 , d = 8;
-	//std::cin >> a >> b >> c >> d;
-	b = a;
-	c = d;
-	std::cout << a << " " << b << " " << c << " " << d;
-	
+	int a;
+	std::cin >> a;
+	std::cout << sqrt(a) << std::endl;
 }
