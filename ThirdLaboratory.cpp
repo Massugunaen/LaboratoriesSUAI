@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>
-
+#define NS 7
 using namespace std;
 
 int main(void)
@@ -15,7 +15,7 @@ int main(void)
 	}
 	else
 	{
-		for (int i=0;i<6;i++)
+		for (int i=0;i<NS;i++)
 		{
 			file.getline(string,50);
 			cout << string << endl;
