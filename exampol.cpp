@@ -6,7 +6,7 @@ int main()
 	int i;
 	std::cin >> i;
 	
-    std::cout << i;! << std::endl; 
+    std::cout << (i) << std::endl; 
 	
 	return 0;
 }
