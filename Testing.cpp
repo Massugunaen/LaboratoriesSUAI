@@ -46,25 +46,34 @@
 //}
 
 
+//#include <conio.h> 
+//#include <stdio.h> 
+//#include <iostream>
+//using namespace std; 
+//
+//int main() {
+//	int x = getch();
+//	std::cout << ("%d", x) << std::endl;
+//	getch();
+//}
+
 #include <conio.h> 
 #include <stdio.h> 
 #include <iostream>
-using namespace std; 
+#define true 1 
+#define false 0
+using namespace std;
 
-int main() {
-	int x = getch();
-	std::cout << ("%d", x) << std::endl;
-	getch();
+string fuck (std::string lol, std::string kek){
+	std::string bratnavek = lol + kek;
+	return bratnavek;
+};
+
+
+int main(void){
+	std::string a = "Hello";
+	std::string b = "wORLD";
+	
+	std::cout << fuck(a,b) << std::endl;
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
