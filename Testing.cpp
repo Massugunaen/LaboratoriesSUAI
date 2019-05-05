@@ -31,16 +31,40 @@
 //}
 
 
-#include <iostream>
-#include <cmath>
+//#include <iostream>
+//#include <cmath>
+//
+//int main(void){
+//	int a,b;
+//	char c;
+//	std::cin >> a >> b;
+//	std::cin >> c;
+//	if (c == '%'){
+//		std::cout << a%b << std::endl;
+//	}
+//	return 0;
+//}
 
-int main(void){
-	int a,b;
-	char c;
-	std::cin >> a >> b;
-	std::cin >> c;
-	if (c == '%'){
-		std::cout << a%b << std::endl;
-	}
-	return 0;
+
+#include <conio.h> 
+#include <stdio.h> 
+#include <iostream>
+using namespace std; 
+
+int main() {
+	int x = getch();
+	std::cout << ("%d", x) << std::endl;
+	getch();
 }
+
+
+
+
+
+
+
+
+
+
+
+

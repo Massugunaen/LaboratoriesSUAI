@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cmath>
+
 //using namespace std;
 
-/* formula == fs*/
+/* formula == */
 
 int while()
 
