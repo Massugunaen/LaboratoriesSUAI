@@ -1,3 +1,4 @@
 *.exe
-*.vscode folder
+.vscode
 *.ipch
+.idea
