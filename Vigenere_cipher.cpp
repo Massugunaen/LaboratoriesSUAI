@@ -1,21 +1,50 @@
+//#include <conio.h> 
+//#include <stdio.h> 
+//#include <iostream>
+//#include <vector>
+//
+//int main() {
+//
+//int n;
+//std::cin >> n;
+//std::vector <int> a(n);
+//
+//for (int i = 0; i < n; i++) {
+//	std::cin >> a[i];
+//}
+//for (int i = n - 1; i >= 0; i --){
+//	std::cout << a[i] << " ";
+//}
+//
+//return 0;
+//}
+
+
 #include <conio.h> 
-#include <stdio.h> 
+#include <cstdio> 
 #include <iostream>
-#define true 1 
-#define false 0
-using namespace std;
-
-string fuck (std::string lol, std::string kek){
-	std::string bratnavek = lol + kek;
-	return bratnavek;
-};
+#include <vector>
 
 
-int main(void){
-	std::string a = "Hello";
-	std::string b = "wORLD";
+int main(){
 	
-	std::cout << fuck(a,b) << std::endl;
+	bool x;
+	FILE * file = fopen("SuperSecretChat.txt", "r");
 	
+	if (file != NULL){
+		
+	}
 }
-//succcfdf
+
+
+//int main(){
+//	const char *t = "text";
+//	const char *p = "text";
+//	
+//	if (*t !=*p){
+//		std::cout << "yes" << std::endl;
+//	}
+//	else {
+//		std::cout << "no" << std::endl;
+//	}
+//}

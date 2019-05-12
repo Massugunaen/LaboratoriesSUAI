@@ -46,41 +46,50 @@ int main(void) {
 
 	std::string Syntax_string = "Syntax: [command][number][number]\n";
 	std::string Support_string = "Supported operations:\n";
-	std::string Operations_string = "-a --addition\n-s --substraction\n-m --multiplication\n-d --division\n-dr --division remainder\n-f --factorial\n-h --help\n-e --exit\n";
-	std::string Error1 = "Unknown command, look up in help list\nType '-h' or '--help' for future instructions";
+	std::string Operations_string = "-a --addition(+)\n-s --substraction(-)\n-m --multiplication(*)\n-d --division(/)\n-dr --division remainder(%)\n-f --factorial(!)\n-h --help\n-e --exit\n";
+	std::string Error = "Unknown command, look up in help list\nType '-h' or '--help' for future instructions\n";
 	std::string help = Syntax_string + Support_string + Operations_string;
 	std::cout << Syntax_string << Support_string << Operations_string;
 
-	char c;
 	std::string line;
 	
 	while (line != "-e" || line != "--exit") {
 		std::cin >> line;
 
-		if (line == "-a" || line == "--addition") {
+		if (line == "-a" || line == "--addition" || line == "+") {
+			
 			double a,b;
-			std::cin >> a >> b;
+			std::cout << "Input your first number" << std::endl;
+			std::cin >> a;
+			std::cout << "Input your second number" << std::endl;
+			std::cin >> b;
 			std::cout << addition(a,b) << std::endl;
 		}
-		else {
-			std::cout << "" << std::endl;
-		}
 
-		if (line == "-s" || line == "--substraction") {
+		if (line == "-s" || line == "--substraction"  || line == "-") {
 			double a,b;
-			std::cin >> a >> b;
+			std::cout << "Input your first number" << std::endl;
+			std::cin >> a;
+			std::cout << "Input your second number" << std::endl;
+			std::cin >> b;
 			std::cout << subtraction(a,b) << std::endl;
 		}
 		
-		if (line == "-m" || line == "--multiplication") {
+		if (line == "-m" || line == "--multiplication"  || line == "*") {
 			double a,b;
-			std::cin >> a >> b;
+			std::cout << "Input your first number" << std::endl;
+			std::cin >> a;
+			std::cout << "Input your second number" << std::endl;
+			std::cin >> b;
 			std::cout << multiplication(a,b) << std::endl;
 		}
 
-		if (line == "-d" || line == "--division") {
+		if (line == "-d" || line == "--division" || line == "/") {
 			double a,b;
-			std::cin >> a >> b;
+			std::cout << "Input your first number" << std::endl;
+			std::cin >> a;
+			std::cout << "Input your second number" << std::endl;
+			std::cin >> b;
 			if(b == 0) {
 				std::cout << "you can't do that" << std::endl;
 				return 1;
@@ -90,9 +99,12 @@ int main(void) {
 			}
 		}
 
-		if (line == "-dr" || line == "--division remainder") {
+		if (line == "-dr" || line == "--division remainder" || line == "%") {
 			int a,b;
-			std::cin >> a >> b;
+			std::cout << "Input your first number" << std::endl;
+			std::cin >> a;
+			std::cout << "Input your second number" << std::endl;
+			std::cin >> b;
 			if(b == 0) {
 				std::cout << "you can't do that" << std::endl;
 				return 1;
@@ -102,8 +114,9 @@ int main(void) {
 			}
 		}
 		
-		if (line == "-f" || line == "--factorial") {
+		if (line == "-f" || line == "--factorial" || line == "!") {
 			int a;
+			std::cout << "Input your number" << std::endl;
 			std::cin >> a;
 			std::cout << factorial(a) << std::endl;
 		}
@@ -115,9 +128,7 @@ int main(void) {
 		if (line == "-e" || line == "--exit") {
 			return 0;
 		}
-
-		else {
-			std::cout << Error1 << std::endl;
-		}
+		
 	}
 };
+
