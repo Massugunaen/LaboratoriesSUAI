@@ -129,6 +129,10 @@ int main(void) {
 			return 0;
 		}
 		
+		else {
+			std::cout << Error;
+		}
+		
 	}
 };
 
