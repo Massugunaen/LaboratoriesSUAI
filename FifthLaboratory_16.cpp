@@ -4,22 +4,21 @@
 int global_m;
 
 double cycle_for(void) {
-	int global_m = 0;
 	std::cin >> global_m;
 	double Y[global_m];
-	for (int i = 0; i < global_m ; i++) { //i < 5
+	for (int i = 0; i < global_m ; i++) {
 		if (i < 3) {
 			std::cin >> Y[i];	
 		}
 		else {
 			Y[i] = (pow(tan(Y[i-1]),2)) + Y[i-3];
-		}			
+		}
 	}
-	return Y[global_m];
+	return Y[global_m-1];
 }
 
 double cycle_while (void) {
-	int i = 0, global_m = 0;
+	int i = 0;
 	std::cin >> global_m;
 	double Y[global_m];
 	while (i < global_m) {
@@ -31,11 +30,11 @@ double cycle_while (void) {
 		}
 		i++;
 	}
-	return Y[global_m];
+	return Y[global_m-1];
 }
 
 double cycle_do_while (void) {
-	int i = 0, global_m = 0;
+	int i = 0;
 	std::cin >> global_m;
 	double Y[global_m];
 	do {
@@ -46,13 +45,11 @@ double cycle_do_while (void) {
 			Y[i] = (pow(tan(Y[i-1]),2)) + Y[i-3];
 		}
 		i++;
-	} while (i < 3);
-	return Y[global_m];
+	} while (i < global_m);
+	return Y[global_m-1];
 }
 
 int main(void) {
-//	int global_m = 0;
-//	std::cin >> global_m;
 	double Y[global_m];
 	std::cout << cycle_for() << std::endl;
 	std::cout << cycle_while() << std::endl;
