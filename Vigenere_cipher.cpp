@@ -11,14 +11,17 @@ int main() {
 	
 	/*operating with the chosen one*/
 	if (lang_input == "eng") {
-		std::cout << "You chose English as crypting language\n";
+		std::cout << "You chose English as encrypting language\n";
 		std::cout << "Please input the word that you want to encrypt\n";
 		std::string word_input;
 		std::cin >> word_input;
 		
-		if (word_input != nullptr) {
-			std::cout << word_input;
-		}
+		
+		
+//		if (word_input != nullptr) {
+//			std::cout << word_input;
+//		}
+		
 	} 
 	/* SHITPOST_LOL */
 	// /*future languages*/
