@@ -55,4 +55,3 @@ int main(void) {
 	std::cout << cycle_while() << std::endl;
 	std::cout << cycle_do_while() << std::endl;
 }
-

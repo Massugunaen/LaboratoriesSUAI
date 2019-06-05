@@ -57,13 +57,13 @@ struct Student
 int filter (Student input[NS], Student output[NS])
 {
     int n = 0;
-    int ex_student[5] = {5 || 4 ,5 || 4,5 || 4,5 || 4,5 || 4};
+    int ex_student[5] = {5 || 4,5 || 4,5 || 4,5 || 4,5 || 4};
     for (int i = 0; i < NS; i++)
     {
-		bool getgender = input[i].gender == 'm';
+		bool matchmonth = input[i].month == 1 || input[i].month == 2 || input[i].month == 12;
         bool getmark = *input[i].mark == *ex_student;
         
-        if (getgender && getmark)
+        if (matchmonth && getmark)
         {
             output[n] = input[i];
             n++;
